@@ -8,4 +8,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :balance, class_name: 'Balance', foreign_key: 'user_id'
+
+  has_many :deposits
+  has_many :withdraws
+  has_many :transactions
+  has_many :statements
+
+  # def statements
+  #   Statement.find_by(user_id: self.id)
+  # end
 end
