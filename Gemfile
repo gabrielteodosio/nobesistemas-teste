@@ -15,6 +15,7 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'gravtastic'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

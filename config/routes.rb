@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root "landing#index"
+  get 'dashboard/index'
+  devise_for :users
+  root 'landing#index'
 end
