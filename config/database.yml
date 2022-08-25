@@ -28,4 +28,9 @@ test:
 
 production:
   <<: *default
-  url: ENV["DATABASE_URL"]
+  sslmode: "require"
+  database: ENV["DATABASE_NAME"]
+  username: ENV["DATABASE_USER"]
+  password: ENV["DATABASE_PASS"]
+  host:     ENV["DATABASE_HOST"]
+  port:     ENV["DATABASE_PORT"]
