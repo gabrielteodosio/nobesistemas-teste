@@ -13,4 +13,10 @@ class User < ApplicationRecord
   has_many :withdraws
   has_many :transactions
   has_many :statements
+
+  validates :email, presence: true
+
+  before_create do
+    self.balance = Balance.new
+  end
 end

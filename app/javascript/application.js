@@ -3,7 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('change', function () {
   const notice = document.getElementById('notice-paragraph')
   const alert = document.getElementById('alert-paragraph')
 
@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (notice) {
     noticeTimeout = setTimeout(function() {
-      notice.remove();
+      notice.hidden = true;
       clearTimeout(noticeTimeout);
     }, 3000);
   }
 
   if (alert) {
     alertTimeout = setTimeout(function() {
-      alert.remove();
+      alert.hidden = true;
       clearTimeout(alertTimeout);
     }, 3000);
   }
