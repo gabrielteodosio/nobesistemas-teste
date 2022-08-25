@@ -2,24 +2,31 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+// const noticeElem = document.getElementById('notice-paragraph')
+// const alertElem = document.getElementById('alert-paragraph')
 
-document.addEventListener('change', function () {
-  const notice = document.getElementById('notice-paragraph')
-  const alert = document.getElementById('alert-paragraph')
+// if (noticeElem) {
+//   noticeElem.addEventListener('change', function () {
+//     if (!noticeElem.hidden) {
+//       let noticeTimeout;
 
-  let noticeTimeout, alertTimeout;
+//       noticeTimeout = setTimeout(function() {
+//         noticeElem.hidden = true;
+//         clearTimeout(noticeTimeout);
+//       }, 3000);
+//     }
+//   })
+// }
 
-  if (notice) {
-    noticeTimeout = setTimeout(function() {
-      notice.hidden = true;
-      clearTimeout(noticeTimeout);
-    }, 3000);
-  }
+// if (alertElem) {
+//   alertElem.addEventListener('change', function () {
+//     if (!alertElem.hidden) {
+//       let alertTimeout;
 
-  if (alert) {
-    alertTimeout = setTimeout(function() {
-      alert.hidden = true;
-      clearTimeout(alertTimeout);
-    }, 3000);
-  }
-})
+//       alertTimeout = setTimeout(function() {
+//         alertElem.hidden = true;
+//         clearTimeout(alertTimeout);
+//       }, 3000);
+//     }
+//   })
+// }

@@ -146,6 +146,8 @@ GEM
     nokogiri (1.13.8-x64-mingw-ucrt)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    paranoia (2.6.0)
+      activerecord (>= 5.1, < 7.1)
     pg (1.4.3-x64-mingw-ucrt)
     public_suffix (5.0.0)
     puma (5.6.5)
@@ -248,6 +250,7 @@ DEPENDENCIES
   gravtastic
   importmap-rails
   jbuilder
+  paranoia (~> 2.6)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)

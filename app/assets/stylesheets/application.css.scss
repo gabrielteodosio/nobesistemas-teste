@@ -46,3 +46,39 @@ span.nav-profile-text {
     margin-right: 0.3rem;
   }
 }
+
+#signup-container,
+#signin-container {
+  > div {
+    height: calc(100vh - 3.8rem);
+
+    > div {
+      height: 100%;
+
+      > form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .field > label {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+#dashboard-container {
+  height: calc(100vh - 3.8rem);
+  min-height: calc(100vh - 3.8rem);
+  max-height: calc(100vh - 3.8rem);
+
+  min-width: 100vw;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+}

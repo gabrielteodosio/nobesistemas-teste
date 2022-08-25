@@ -1,2 +1,19 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<div id="dashboard-container" class="container-container">
+  <header>
+    <% if user_signed_in? %>
+      <h1 class="display-4">Olá, <%= current_user.first_name %>!</h1>
+      <h4 class="display-6"><%= @balance_amount %></h4>
+    <% else %>
+      <h1>Olá!</h1>
+    <% end %>
+  </header>
+
+  <section class="mt-4">
+    <div class="d-flex flex-row flex-grow-1 vw-50">
+      <%= link_to "Novo Depósito", deposit_new_path, class: "btn btn-success" %>
+      <%= link_to "Novo Saque", withdraw_new_path, class: "btn btn-info" + (@balance.amount == 0.0 ? " disabled" : "") %>
+      <%= link_to "Nova Transferência", transaction_new_path, class: "btn btn-dark" + (@balance.amount == 0.0 ? " disabled" : "") %>
+      <%= link_to "Novo Extrato", statement_new_path, class: "btn btn-primary" %>
+    </div>
+  </section>
+</div>

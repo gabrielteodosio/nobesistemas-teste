@@ -18,6 +18,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'dotenv-rails', groups: %i[development test production]
 gem 'font-awesome-sass', '~> 6.1.2'
 gem 'gravtastic'
+gem 'paranoia', '~> 2.6'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]

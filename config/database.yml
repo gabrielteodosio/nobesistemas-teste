@@ -9,7 +9,7 @@ development:
   database: nobebank_development
   username: postgres
   password: 123mudar
-  host: localhost
+  host: 127.0.0.1
   port: 5432
 
   #schema_search_path: myapp,sharedapp,public
