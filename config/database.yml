@@ -28,6 +28,4 @@ test:
 
 production:
   <<: *default
-  database: nobebank_production
-  username: nobebank
-  password: <%= ENV["NOBEBANK_DATABASE_PASSWORD"] %>
+  url: ENV["DATABASE_URL"]
