@@ -13,8 +13,4 @@ class User < ApplicationRecord
   has_many :withdraws
   has_many :transactions
   has_many :statements
-
-  # def statements
-  #   Statement.find_by(user_id: self.id)
-  # end
 end
