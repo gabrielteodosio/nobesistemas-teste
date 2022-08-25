@@ -1,5 +1,39 @@
 <header>
-  <% if user_signed_in? %>
-    <%= image_tag current_user.gravatar_url, :class => "gravatar" %>
-  <% end %>
+  <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+    <div class="container-fluid">
+      <%= link_to "Nobe Bank", root_path, class: "navbar-brand" %>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+          </li>
+          <!--
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          -->
+        </ul>
+
+        <div id="avatar-container">
+          <% if user_signed_in? %>
+            <%= image_tag current_user.gravatar_url, :class => "gravatar" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </nav>
 </header>
