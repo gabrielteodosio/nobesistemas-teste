@@ -17,6 +17,8 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'gravtastic'
 gem 'dotenv-rails', groups: [:development, :test, :production]
+gem "font-awesome-sass", "~> 6.1.2"
+
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
