@@ -1,8 +1,8 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">New Deposit</h5>
+    <h5 class="card-title">New Withdraw</h5>
 
-    <%= form_with(model: [:deposit, @deposit], url: deposit_create_path, local: true, method: :post, data: { turbo: false, aos: "fade-up", aos_delay: "300" }) do |f| %>
+    <%= form_with(model: [:withdraw, @withdraw], url: withdraw_create_path, local: true, method: :post, data: { turbo: false, aos: "fade-up", aos_delay: "300" }) do |f| %>
     <form class="row g-3">
       <div class="col-12">
         <label for="inputNanme4" class="form-label">Your Name</label>
@@ -19,7 +19,7 @@
       </div>
 
       <div class="actions text-center">
-        <%= f.submit "Deposit", class: "submit-button btn btn-primary" %>
+        <%= f.submit "Withdraw", class: "submit-button btn btn-primary" %>
         <button type="reset" class="btn btn-secondary">Reset</button>
       </div>
     <% end %>

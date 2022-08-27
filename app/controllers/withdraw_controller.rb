@@ -4,16 +4,25 @@ class WithdrawController < SecuredController
   end
 
   def info
-    withdraw_id = params[:id]
-    @withdraw ||= Withdraw.find_by_id(withdraw_id)
+    @withdraw ||= Withdraw.find_by_id(params[:id])
   end
 
   def new
-    @withdraw ||= Withdraw.new
-    @withdraw.user = current_user
+    @withdraw ||= Withdraw.new(user: current_user)
   end
 
   def create
-    @withdraw.save unless @withdraw.nil?
+    withdraw_params = params[:withdraw]
+
+    @withdraw ||= Withdraw.new(
+      user: current_user,
+      amount: withdraw_params[:amount].to_f
+    )
+
+    if @withdraw.save
+      redirect_to dashboard_url
+    else
+      puts 'failed'
+    end
   end
 end
