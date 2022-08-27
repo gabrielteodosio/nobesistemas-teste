@@ -3,10 +3,6 @@ class DepositController < SecuredController
     @deposits = current_user.deposits
   end
 
-  def info
-    @deposit ||= Deposit.find_by_id(params[:id])
-  end
-
   def new
     @deposit ||= Deposit.new
   end

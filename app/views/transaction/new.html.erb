@@ -16,12 +16,12 @@
                 form_with(
                   local: true,
                   method: :post,
+                  class: "row g-3",
                   data: { turbo: false },
                   url: transaction_create_path,
                   model: [:transaction, @transaction]
                 ) do |f|
               %>
-              <form class="row g-3">
                 <div class="row mb-3">
                   <div class="col-6">
                     <%= f.label :receiver_id, class: "form-label" %>
@@ -48,7 +48,6 @@
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
               <% end %>
-
             </div>
           </div>
         </div>

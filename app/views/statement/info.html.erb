@@ -1,0 +1,83 @@
+<main id="main">
+  <div class="breadcrumbs d-flex align-items-center">
+    <div class="container position-relative d-flex flex-column align-items-center">
+      <h2>New Statement</h2>
+    </div>
+  </div>
+
+  <section>
+    <div class="container-fluid" data-aos="fade-right">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <h6>Deposits</h6>
+          <table class="table table-sm table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Amount (R$)</th>
+                <th scope="col">Created At</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @statement.deposits.each do |deposit| %>
+                <tr>
+                  <td><%= deposit.id %></td>
+                  <td><%= number_to_currency(deposit.amount, unit: "", separator: ",", delimiter: ".") %></td>
+                  <td><%= deposit.created_at %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-4">
+          <h6>Withdraws</h6>
+          <table class="table table-sm table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Amount (R$)</th>
+                <th scope="col">Created At</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @statement.withdraws.each do |withdraw| %>
+                <tr>
+                  <td><%= withdraw.id %></td>
+                  <td><%= number_to_currency(withdraw.amount, unit: "", separator: ",", delimiter: ".") %></td>
+                  <td><%= withdraw.created_at %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-4">
+          <h6>Transactions</h6>
+          <table class="table table-sm table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Amount (R$)</th>
+                <th scope="col">Sender</th>
+                <th scope="col">Receiver</th>
+                <th scope="col">Created At</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @statement.transactions.each do |transaction| %>
+              <% sender = User.find_by_id(transaction.sender_id)  %>
+              <% receiver = User.find_by_id(transaction.receiver_id)  %>
+                <tr>
+                  <td><%= transaction.id %></td>
+                  <td><%= number_to_currency(transaction.amount, unit: "", separator: ",", delimiter: ".") %></td>
+                  <td><%= "#{sender.first_name} #{sender.last_name}" %></td>
+                  <td><%= "#{receiver.first_name} #{receiver.last_name}" %></td>
+                  <td><%= transaction.created_at %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

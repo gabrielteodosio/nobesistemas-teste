@@ -16,12 +16,12 @@
                 form_with(
                   local: true,
                   method: :post,
+                  class: "row g-3",
                   data: { turbo: false },
                   url: deposit_create_path,
                   model: [:deposit, @deposit]
                 ) do |f|
               %>
-              <form class="row g-3">
                 <div class="col-12 mb-3">
                   <%= f.label :amount, class: "form-label" %>
 

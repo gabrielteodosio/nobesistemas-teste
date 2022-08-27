@@ -1,18 +1,3 @@
-class StatementDeposit < ApplicationRecord
-  belongs_to :statement, class_name: 'Statement'
-  belongs_to :deposit, class_name: 'Deposit'
-end
-
-class StatementWithdraw < ApplicationRecord
-  belongs_to :statement, class_name: 'Statement'
-  belongs_to :withdraw, class_name: 'Withdraw'
-end
-
-class StatementTransaction < ApplicationRecord
-  belongs_to :statement, class_name: 'Statement', foreign_key: 'statement_id'
-  belongs_to :transacs, class_name: 'Transaction', foreign_key: 'transaction_id'
-end
-
 class Statement < ApplicationRecord
   belongs_to :user
 
@@ -24,4 +9,18 @@ class Statement < ApplicationRecord
 
   has_many :statement_transactions, class_name: 'StatementTransaction'
   has_many :transactions, through: :statement_transactions, source: :transacs
+
+  before_save do
+    self.deposits = Deposit.where(user: user)
+      .where('DATE(created_at) >= ? AND DATE(created_at) <= ?', start_date, end_date)
+      .order(created_at: :desc)
+
+    self.withdraws = Withdraw.where(user: user)
+      .where('DATE(created_at) >= ? AND DATE(created_at) <= ?', start_date, end_date)
+      .order(created_at: :desc)
+
+    self.transactions = Transaction.where('sender_id = ? OR receiver_id = ?', user.id, user.id)
+      .where('DATE(created_at) >= ? AND DATE(created_at) <= ?', start_date, end_date)
+      .order(created_at: :desc)
+  end
 end

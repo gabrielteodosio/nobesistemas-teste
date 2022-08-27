@@ -3,10 +3,6 @@ class WithdrawController < SecuredController
     @withdraws = current_user.withdraws
   end
 
-  def info
-    @withdraw ||= Withdraw.find_by_id(params[:id])
-  end
-
   def new
     @withdraw ||= Withdraw.new(user: current_user)
   end

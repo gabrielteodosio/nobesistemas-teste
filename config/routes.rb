@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'statement', to: 'statement#index'
   get 'statement/new', to: 'statement#new'
   get 'statement/info/:id', to: 'statement#info'
+  post 'statement/feed', to: 'statement#feed'
   post 'statement/create', to: 'statement#create'
 
   devise_for :users, controllers: {
