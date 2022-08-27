@@ -13,6 +13,48 @@ body, p {
 	font: 400 1rem/1.625rem "Open Sans", sans-serif;
 }
 
+body {
+  position: relative;
+
+  .notice-container {
+    z-index: 4;
+    position: absolute;
+    top: 7rem;
+    left: 2rem;
+    right: 2rem;
+    background-color: transparent;
+
+    > p {
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.8);
+      box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.8);
+
+      background-color: rgb(25, 135, 84);
+      color: white;
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .alert-container {
+    z-index: 4;
+    position: absolute;
+    top: 7rem;
+    left: 2rem;
+    right: 2rem;
+    background-color: transparent;
+
+    > p {
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.8);
+      box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.8);
+
+      background-color: rgb(220, 53, 69);
+      color: white;
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
 a {
   text-decoration: none !important;
 }

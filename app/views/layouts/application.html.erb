@@ -39,15 +39,19 @@
     <%= render "layouts/header" %>
 
     <% unless notice.nil? %>
-      <p id="notice-paragraph" data-main-target="noticeParagraph" class="alert alert-success">
-        <%= notice %>
-      </p>
+      <div class="notice-container">
+        <p id="notice-paragraph" data-main-target="noticeParagraph" data-aos="fade-down" class="alert alert-success">
+          <%= notice %>
+        </p>
+      </div>
     <% end %>
 
     <% unless alert.nil? %>
-      <p id="alert-paragraph" data-main-target="alertParagraph" class="alert alert-danger">
-        <%= alert %>
-      </p>
+      <div class="alert-container">
+        <p id="alert-paragraph" data-main-target="alertParagraph" data-aos="fade-down" class="alert alert-danger">
+          <%= alert %>
+        </p>
+      </div>
     <% end %>
 
     <%= yield %>
