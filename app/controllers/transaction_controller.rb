@@ -14,6 +14,18 @@ class TransactionController < SecuredController
   end
 
   def create
-    @transaction.save unless @transaction.nil?
+    transaction_params = params[:transaction]
+
+    @transaction ||= Transaction.new(
+      sender_id: current_user.id,
+      receiver_id: transaction_params[:receiver_id],
+      amount: transaction_params[:amount].to_f
+    )
+
+    if @transaction.save
+      redirect_to dashboard_url
+    else
+      puts 'failed'
+    end
   end
 end

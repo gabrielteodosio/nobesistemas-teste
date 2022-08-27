@@ -4,12 +4,10 @@ Rails.application.routes.draw do
 
   get 'deposit', to: 'deposit#index'
   get 'deposit/new', to: 'deposit#new'
-  get 'deposit/info/:id', to: 'deposit#info'
   post 'deposit/create', to: 'deposit#create'
 
   get 'withdraw', to: 'withdraw#index'
   get 'withdraw/new', to: 'withdraw#new'
-  get 'withdraw/info/:id', to: 'withdraw#info'
   post 'withdraw/create', to: 'withdraw#create'
 
   get 'transaction', to: 'transaction#index'
