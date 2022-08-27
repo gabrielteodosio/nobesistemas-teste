@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
+  get 'about_us', to: 'about_us#index'
 
   get 'deposit', to: 'deposit#index'
   get 'deposit/:id', to: 'deposit#info'

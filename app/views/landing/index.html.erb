@@ -1,2 +1,16 @@
-<h1>Landing#index</h1>
-<p>Find me in app/views/landing/index.html.erb</p>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero bg-image d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <h2 data-aos="fade-up"><strong>Nobe Bank</strong></h2>
+        <blockquote data-aos="fade-up" data-aos-delay="100">
+          <p>O banco para os amantes do próprio dinheiro.<br />Crie sua conta hoje mesmo! </p>
+        </blockquote>
+        <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+          <%= link_to "SIGN UP", new_user_registration_path, class: "btn-get-started" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Hero Section -->

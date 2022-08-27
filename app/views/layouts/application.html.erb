@@ -4,25 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Apenas um teste de aplicação que pode acarretar na minha contratação">
+    <meta name="author" content="Gabriel Teodósio Marques">
+
+    <!-- Webpage Title -->
     <title>Nobe Bank</title>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track" => "reload" %>
-    <%= javascript_importmap_tags %>
+
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- plyr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/plyr.min.css" integrity="sha512-kzA10waqGTUBGThJFb6skfGDGUmTleyWjQy9qNaaUaXDwWmTV18jtu/P4PrwZkc89z+DLa0x0IoyuDcintgj/w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- aos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css">
+
+    <!-- glightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" integrity="sha512-T+KoG3fbDoSnlgEXFQqwcTC9AdkFIxhBlmoaFqYaIjq2ShhNwNao9AKaLUPMfwiBPL0ScxAtc+UYbHAgvd+sjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
-  <body>
+  <body data-controller="main" class="page-index">
     <%= render "layouts/header" %>
-    <%= tag.p notice, id: "notice-paragraph", class: "alert alert-success", hidden: notice.nil? %>
-    <%= tag.p alert, id: "alert-paragraph", class: "alert alert-danger", hidden: alert.nil? %>
 
-    <main class="app-main">
-      <%= yield %>
-    </main>
+    <% unless notice.nil? %>
+      <p id="notice-paragraph" data-main-target="noticeParagraph" class="alert alert-success">
+        <%= notice %>
+      </p>
+    <% end %>
+
+    <% unless alert.nil? %>
+      <p id="alert-paragraph" data-main-target="alertParagraph" class="alert alert-danger">
+        <%= alert %>
+      </p>
+    <% end %>
+
+    <%= yield %>
+
     <%= render "layouts/footer" %>
+
+    <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <!-- aos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js"></script>
+
+    <!-- glightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js" integrity="sha512-S/H9RQ6govCzeA7F9D0m8NGfsGf0/HjJEiLEfWGaMCjFzavo+DkRbYtZLSO+X6cZsIKQ6JvV/7Y9YMaYnSGnAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- isotope-layout -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <%= javascript_importmap_tags %>
+    <div id="preloader" data-main-target="preloader" data-action="load@document->main#onWindowLoad"></div>
   </body>
 </html>

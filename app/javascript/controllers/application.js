@@ -6,4 +6,8 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
+Stimulus.handleError = (error, message, detail) => {
+  console.warn('stimulus - error', {error, message, detail});
+}
+
 export { application }

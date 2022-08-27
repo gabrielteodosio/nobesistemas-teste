@@ -1,2 +1,56 @@
-<footer>
+<footer id="footer" class="footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>Nobe Bank</span>
+          </a>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic unde excepturi quis aut neque iusto consequatur impedit perspiciatis, voluptatem inventore pariatur ad tenetur debitis harum, maiores eos. Dolor, cumque quod.</p>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li>
+              <%= link_to "Home", root_path %>
+            </li>
+            <li>
+              <%= link_to "Sign In", new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "About Us", about_us_path %>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Services (Fake)</h4>
+          <ul>
+            <li><i class="bi bi-dash"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-dash"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-dash"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-dash"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-dash"></i> <a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us (Fake)</h4>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022<br>
+            United States <br><br>
+            <strong>Phone:</strong> +55 (84) 9 9999-9999<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 </footer>
