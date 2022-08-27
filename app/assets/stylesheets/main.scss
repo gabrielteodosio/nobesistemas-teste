@@ -38,3 +38,37 @@ span.nav-profile-text {
     border-radius: 50%;
   }
 }
+
+.btn:focus,
+input:focus,
+[type=button]:focus {
+  box-shadow: none !important;
+}
+
+form {
+
+  .actions {
+    display: block;
+
+    & > .submit-button {
+      background: #1f98d1;
+      border: 0;
+      padding: 12px 40px;
+      color: #fff;
+      transition: 0.4s;
+    }
+  }
+
+  .secondary-actions {
+    display: block;
+
+    a {
+      background: white;
+      border: 0;
+      padding: 12px 40px;
+      color: #1f98d1;
+      border: 1px solid #1f98d1;
+      transition: 0.4s;
+    }
+  }
+}

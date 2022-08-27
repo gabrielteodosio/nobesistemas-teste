@@ -509,8 +509,13 @@ section {
   padding: 120px 0;
   z-index: 3;
 
-  &.bg-image {
+  &.bg-landing {
     background: image-url("hero-bg.jpg") top center;
+    background-size: cover;
+  }
+
+  &.bg-sign-in {
+    background: image-url("sign-in.jpg") top center;
     background-size: cover;
   }
 }
