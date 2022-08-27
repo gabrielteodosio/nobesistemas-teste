@@ -1,19 +1,41 @@
-<div id="dashboard-container" class="container-container">
-  <header>
-    <% if user_signed_in? %>
-      <h1 class="display-4">Olá, <%= current_user.first_name %>!</h1>
-      <h4 class="display-6"><%= @balance_amount %></h4>
-    <% else %>
-      <h1>Olá!</h1>
-    <% end %>
-  </header>
-
-  <section class="mt-4">
-    <div class="d-flex flex-row flex-grow-1 vw-50">
-      <%= link_to "Novo Depósito", deposit_new_path, class: "btn btn-success" %>
-      <%= link_to "Novo Saque", withdraw_new_path, class: "btn btn-info" + (@balance.amount == 0.0 ? " disabled" : "") %>
-      <%= link_to "Nova Transferência", transaction_new_path, class: "btn btn-dark" + (@balance.amount == 0.0 ? " disabled" : "") %>
-      <%= link_to "Novo Extrato", statement_new_path, class: "btn btn-primary" %>
+<section class="hero dashboard-bg d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <h2 data-aos="fade-up">
+          <% if user_signed_in? %>
+            <strong>Olá, <%= current_user.first_name %>!</strong>
+          <% else %>
+            <strong>Olá!</strong>
+          <% end %>
+        </h2>
+        <h4 data-aos="fade-up" style="color: white;"><%= @balance_amount %></h4>
+        <blockquote data-aos="fade-up" data-aos-delay="100">
+          <p>
+            Acesse nossos serviços ao lado:
+          </p>
+        </blockquote>
+      </div>
+      <div class="col-xl-2"></div>
+      <div class="col-xl-6">
+        <h3 class="display-6 font-white" data-aos="fade-right" data-aos-delay="200">
+          Our Services:
+        </h3>
+        <div class="row mt-4" data-aos="fade-right" data-aos-delay="300">
+          <div class="col-3">
+            <%= link_to "New Deposit", deposit_new_path, class: "btn btn-success" %>
+          </div>
+          <div class="col-3">
+            <%= link_to "New Withdraw", withdraw_new_path, class: "btn btn-info" + (@balance.amount == 0.0 ? " disabled" : "") %>
+          </div>
+          <div class="col-3">
+            <%= link_to "New Transfer", transaction_new_path, class: " btn btn-dark" + (@balance.amount == 0.0 ? " disabled" : "") %>
+          </div>
+          <div class="col-3">
+            <%= link_to "Statement", statement_new_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>

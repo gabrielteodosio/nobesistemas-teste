@@ -118,3 +118,13 @@ form {
 #about-us-subheader {
   background-image: image-url('about-us.jpg');
 }
+
+.dashboard-bg {
+  &::before {
+    background-color: rgba(27, 47, 69, 0.7);
+  }
+}
+
+.font-white {
+  color: white;
+}
