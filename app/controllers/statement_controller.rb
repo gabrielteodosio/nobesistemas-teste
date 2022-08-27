@@ -21,7 +21,7 @@ class StatementController < SecuredController
     )
 
     if @statement.save
-      redirect_to action: "info", id: @statement.id
+      redirect_to action: :info, id: @statement.id
     else
       puts 'failed'
     end

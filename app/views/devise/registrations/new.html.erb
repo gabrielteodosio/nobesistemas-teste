@@ -14,15 +14,22 @@
       <div class="col-xl-2"></div>
 
       <div class="col-xl-6">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { aos: "fade-up", aos_delay: "300" }) do |f| %>
+        <%=
+          form_for(
+            resource,
+            as: resource_name,
+            url: registration_path(resource_name),
+            data: { aos: "fade-up", aos_delay: "300" }
+          ) do |f|
+        %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="field form-group mb-3">
-            <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+            <%= f.text_field :username, placeholder: "Username", class: "form-control", autofocus: true %>
           </div>
 
           <div class="field form-group mb-3">
-            <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", class: "form-control" %>
+            <%= f.email_field :email, placeholder: "Email", autocomplete: "email", class: "form-control" %>
           </div>
 
           <div class="row mb-3">

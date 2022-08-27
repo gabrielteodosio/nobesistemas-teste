@@ -14,14 +14,23 @@
             <div class="card-body">
               <%=
                 form_with(
-                  local: true,
                   method: :post,
                   class: "row g-3",
-                  data: { turbo: false },
+                  model: @withdraw,
                   url: withdraw_create_path,
-                  model: [:withdraw, @withdraw]
                 ) do |f|
               %>
+                <% if @withdraw.errors.any? %>
+                  <div class="col-12 mb-4">
+                    <h6>Errors:</h6>
+                    <ul>
+                      <% resource.errors.messages do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
                 <div class="col-12 mb-3">
                   <%= f.label :amount, class: "form-label" %>
 
