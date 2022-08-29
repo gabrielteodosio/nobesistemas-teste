@@ -26,7 +26,6 @@ test:
   host: localhost
   port: 5432
 
-
 production:
   <<: *default
   sslmode: "require"
