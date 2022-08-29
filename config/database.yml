@@ -4,13 +4,14 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+  database: <%= ENV["DATABASE_NAME"] %>
+  username: <%= ENV["DATABASE_USER"] %>
+  password: <%= ENV["DATABASE_PASS"] %>
+  host:     <%= ENV["DATABASE_HOST"] %>
+  port:     <%= ENV["DATABASE_PORT"].to_i %>
+
 development:
   <<: *default
-  database: nobebank_development
-  username: postgres
-  password: 123mudar
-  host: 127.0.0.1
-  port: 5432
 
   #schema_search_path: myapp,sharedapp,public
   #min_messages: notice
@@ -29,8 +30,3 @@ test:
 production:
   <<: *default
   sslmode: "require"
-  database: ENV["DATABASE_NAME"]
-  username: ENV["DATABASE_USER"]
-  password: ENV["DATABASE_PASS"]
-  host:     ENV["DATABASE_HOST"]
-  port:     ENV["DATABASE_PORT"]
